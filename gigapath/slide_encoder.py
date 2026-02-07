@@ -150,7 +150,7 @@ class LongNetViT(nn.Module):
         segment_length = np.linspace(np.log2(1024), int(np.log2(max_seq_len)), 5)
         segment_length = np.power(2, segment_length).astype(int)
         # convert to str format
-        segment_length = str(list(segment_length))
+        segment_length = str(segment_length.tolist())
         return segment_length
 
     def _init_weights(self, m):
